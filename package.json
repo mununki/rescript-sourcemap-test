@@ -5,8 +5,9 @@
   "type": "module",
   "packageManager": "pnpm@10.33.0",
   "scripts": {
-    "res:build": "rescript build",
-    "res:watch": "rescript build -w",
+    "res:build": "rescript",
+    "res:watch": "rescript watch",
+    "res:clean": "rescript clean",
     "dev": "vite --host 127.0.0.1",
     "build": "pnpm run res:build && vite build",
     "node:source-map": "pnpm run res:build && node --enable-source-maps src/NodeProbe.js",
