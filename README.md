@@ -5,15 +5,20 @@ compiler branch.
 
 ## Setup
 
-Build the PR branch in your local ReScript compiler checkout. The compiler
-repository uses Yarn, and `make` builds both the compiler and rewatch binaries
-used by the linked `rescript` package:
+Check out and build the sourcemap branch in a local ReScript compiler clone. The
+examples below assume the compiler repository is cloned as `rescript` next to
+this test project:
 
 ```sh
-cd /path/to/rescript-sourcemap
+cd /path/to/rescript
+git fetch origin
+git checkout sourcemap
 yarn install
 opam exec -- make
 ```
+
+The compiler repository uses Yarn, and `make` builds both the compiler and
+rewatch binaries used by the linked `rescript` package.
 
 The app uses npm packages for `@rescript/react` and `@rescript/runtime`. The
 only local package link is the `rescript` compiler package. If your compiler
@@ -23,7 +28,7 @@ installing:
 ```json
 {
   "devDependencies": {
-    "rescript": "link:/path/to/rescript-sourcemap"
+    "rescript": "link:/path/to/rescript"
   }
 }
 ```
