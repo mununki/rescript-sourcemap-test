@@ -1,0 +1,20 @@
+{
+  "name": "rescript-sourcemap-test",
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    }
+  ],
+  "package-specs": {
+    "module": "esmodule",
+    "in-source": true
+  },
+  "jsx": {
+    "version": 4,
+    "module": "react"
+  },
+  "dependencies": ["@rescript/react"],
+  "sourceMap": true,
+  "sourceMapSourcesContent": true
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"Main.js","sources":["Main.res"],"names":[],"mappings":";;;;;;WAAO;;;EAEL,+BAE8B","sourcesContent":["switch ReactDOM.querySelector(\"#root\") {\n| Some(root) =>\n  root\n  ->ReactDOM.Client.createRoot\n  ->ReactDOM.Client.Root.render(<App />)\n| None => ()\n}\n"]}

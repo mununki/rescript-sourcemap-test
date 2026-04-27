@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Source Map Accuracy Probe</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="panel">
+        <p class="eyebrow">Line and column accuracy</p>
+        <h1>Unicode, emoji, and CRLF source maps</h1>
+        <p class="summary">
+          Open DevTools Sources, set breakpoints in AccuracyProbe.res and CrLfProbe.res,
+          then click each button.
+        </p>
+        <div class="actions vertical-actions">
+          <button id="ascii-baseline">ASCII baseline</button>
+          <button id="unicode-column">Unicode column: 한글 before throw</button>
+          <button id="emoji-column">Emoji column: 🌏 before throw</button>
+          <button id="multiple-expressions">Multi-line expression</button>
+          <button id="crlf-source">CRLF source file</button>
+        </div>
+      </section>
+    </main>
+    <script type="module">
+      import {
+        asciiBaseline,
+        emojiColumn,
+        multipleExpressions,
+        unicodeColumn,
+      } from "/src/AccuracyProbe.js";
+      import { throwFromCrLf } from "/src/CrLfProbe.js";
+
+      document.querySelector("#ascii-baseline").addEventListener("click", asciiBaseline);
+      document.querySelector("#unicode-column").addEventListener("click", unicodeColumn);
+      document.querySelector("#emoji-column").addEventListener("click", emojiColumn);
+      document.querySelector("#multiple-expressions").addEventListener("click", multipleExpressions);
+      document.querySelector("#crlf-source").addEventListener("click", throwFromCrLf);
+    </script>
+  </body>
+</html>

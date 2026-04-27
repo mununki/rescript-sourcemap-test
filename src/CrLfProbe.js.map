@@ -1,0 +1,1 @@
+{"version":3,"file":"CrLfProbe.js","sources":["CrLfProbe.res"],"names":[],"mappings":";;;;;;AAEoB;SAElB,gCADc","sourcesContent":["let crlfLabel = \"CRLF source file\"\r\n\r\nlet throwFromCrLf = () => {\r\n  let message = crlfLabel ++ \" should map to CrLfProbe.res\"\r\n  JsError.throwWithMessage(message)\r\n}\r\n"]}

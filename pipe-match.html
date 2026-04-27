@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pipe and Pattern Match Source Map Probe</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="panel">
+        <p class="eyebrow">Pipe and pattern match</p>
+        <h1>PipeMatchProbe.res</h1>
+        <p class="summary">
+          Open DevTools Sources, set breakpoints in PipeMatchProbe.res, then click each button.
+        </p>
+        <div class="actions vertical-actions">
+          <button id="run-pipe" class="danger">Throw from pipe chain</button>
+          <button id="match-ok" class="danger">Throw from match: PipeOk</button>
+          <button id="match-missing" class="danger">Throw from match: PipeMissing</button>
+          <button id="match-failed" class="danger">Throw from match: PipeFailed</button>
+        </div>
+      </section>
+    </main>
+    <script>
+      globalThis.throwPipeMatchProbeError = message => {
+        throw new Error(message);
+      };
+      globalThis.throwPipeMatchProbeErrorWithPrefix = (value, prefix) => {
+        throw new Error(prefix + value);
+      };
+    </script>
+    <script type="module">
+      import {
+        runMatchFailed,
+        runMatchMissing,
+        runMatchOk,
+        runPipe,
+      } from "/src/PipeMatchProbe.js";
+
+      document.querySelector("#run-pipe").addEventListener("click", runPipe);
+      document.querySelector("#match-ok").addEventListener("click", runMatchOk);
+      document.querySelector("#match-missing").addEventListener("click", runMatchMissing);
+      document.querySelector("#match-failed").addEventListener("click", runMatchFailed);
+    </script>
+  </body>
+</html>

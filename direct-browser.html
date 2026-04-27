@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Direct Browser Source Map Probe</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="panel">
+        <p class="eyebrow">Direct browser module</p>
+        <h1>DirectBrowserProbe.res</h1>
+        <p class="summary">
+          Open DevTools, set a breakpoint in DirectBrowserProbe.res, then click the button.
+        </p>
+        <div class="actions">
+          <button id="throw-direct" class="danger">Throw from direct ReScript module</button>
+        </div>
+      </section>
+    </main>
+    <script type="module">
+      import { throwFromDirectBrowser } from "/src/DirectBrowserProbe.js";
+
+      document
+        .querySelector("#throw-direct")
+        .addEventListener("click", () => throwFromDirectBrowser());
+    </script>
+  </body>
+</html>
