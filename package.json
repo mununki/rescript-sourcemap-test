@@ -21,7 +21,7 @@
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "rescript": "link:../rescript-sourcemap",
+    "rescript": "link:../rescript",
     "vite": "^7.2.0"
   }
 }

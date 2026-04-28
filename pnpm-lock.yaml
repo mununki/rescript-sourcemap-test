@@ -22,8 +22,8 @@ importers:
         version: 19.2.5(react@19.2.5)
     devDependencies:
       rescript:
-        specifier: link:../rescript-sourcemap
-        version: link:../rescript-sourcemap
+        specifier: link:../rescript
+        version: link:../rescript
       vite:
         specifier: ^7.2.0
         version: 7.3.2

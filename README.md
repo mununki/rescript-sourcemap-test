@@ -21,14 +21,25 @@ The compiler repository uses Yarn, and `make` builds both the compiler and
 rewatch binaries used by the linked `rescript` package.
 
 The app uses npm packages for `@rescript/react` and `@rescript/runtime`. The
-only local package link is the `rescript` compiler package. If your compiler
-checkout is not next to this project, update that path in `package.json` before
-installing:
+only local package link is the `rescript` compiler package. By default,
+`package.json` points at `../rescript`. If your compiler checkout is not next to
+this project, update that path before installing:
 
 ```json
 {
   "devDependencies": {
     "rescript": "link:/path/to/rescript"
+  }
+}
+```
+
+This app enables linked source maps in `rescript.json` with:
+
+```json
+{
+  "sourceMap": {
+    "mode": "linked",
+    "sourcesContent": true
   }
 }
 ```
