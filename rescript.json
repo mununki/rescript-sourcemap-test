@@ -16,6 +16,7 @@
   },
   "dependencies": ["@rescript/react"],
   "sourceMap": {
+    "enabled": "always",
     "mode": "linked",
     "sourcesContent": true
   }

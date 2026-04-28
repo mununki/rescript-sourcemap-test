@@ -38,11 +38,17 @@ This app enables linked source maps in `rescript.json` with:
 ```json
 {
   "sourceMap": {
+    "enabled": "always",
     "mode": "linked",
     "sourcesContent": true
   }
 }
 ```
+
+This test project uses `"always"` so the build-based browser and Node checks
+produce source maps from `pnpm build` and `pnpm run test:node-sourcemap`.
+For normal development projects, use `"dev"` if you only want source maps
+during `rescript watch`.
 
 `@rescript/runtime` is pinned to the npm-published 13 alpha runtime because this
 test app is meant to run against a 13 alpha compiler branch.
